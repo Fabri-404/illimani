@@ -4,6 +4,8 @@ import { Unbounded } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
   description:
     "Elevamos tu proyecto con precisión, visión y la firmeza que nos define. Constructora y consultora líder en Bolivia especializada en arquitectura, ingeniería civil, y gestión de proyectos de alto nivel.",
   icons: {
-    icon: "/img/illimaninegro.png",
+    icon: `${basePath}/img/illimaninegro.png`,
   },
 };
 

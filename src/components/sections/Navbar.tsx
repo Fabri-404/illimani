@@ -13,6 +13,8 @@ const navLinks = [
     { label: "Contacto", href: "#contacto" },
 ];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export function Navbar() {
     const { scrollY } = useScroll();
     const [hidden, setHidden] = useState(false);
@@ -74,7 +76,7 @@ export function Navbar() {
                 {/* Logo */}
                 <a href="#inicio" className="relative z-10 flex items-center gap-3">
                     <Image
-                        src="/img/illimanilogo.gif"
+                        src={`${basePath}/img/illimanilogo.gif`}
                         alt="Illimani Logo"
                         width={150}
                         height={50}

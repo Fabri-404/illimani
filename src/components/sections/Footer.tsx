@@ -27,6 +27,8 @@ const socialLinks = [
     { icon: Linkedin, href: "#", label: "LinkedIn" },
 ];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export function Footer() {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -52,7 +54,7 @@ export function Footer() {
                         <div className="lg:col-span-1">
                             <div className="mb-6">
                                 <Image
-                                    src="/img/illimaniblanco.png"
+                                    src={`${basePath}/img/illimaniblanco.png`}
                                     alt="Illimani Logo"
                                     width={140}
                                     height={45}
