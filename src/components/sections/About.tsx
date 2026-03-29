@@ -4,6 +4,8 @@ import { motion, useInView } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import { Shield, Award, Users, Clock } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 function AnimatedCounter({ end, suffix = "", duration = 2 }: { end: number; suffix?: string; duration?: number }) {
     const ref = useRef<HTMLSpanElement>(null);
     const isInView = useInView(ref, { once: true });
@@ -151,7 +153,7 @@ export function About() {
                             <div
                                 className="w-full h-full"
                                 style={{
-                                    backgroundImage: "url(/img/fondo.jpg)",
+                                    backgroundImage: `url(${basePath}/img/fondo.jpg)`,
                                     backgroundSize: "cover",
                                     backgroundPosition: "center",
                                 }}

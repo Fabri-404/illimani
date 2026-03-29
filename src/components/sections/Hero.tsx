@@ -5,6 +5,8 @@ import { useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import BlurText from "@/components/ui/BlurText";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export function Hero() {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -30,7 +32,7 @@ export function Hero() {
                 className="absolute inset-0 z-0"
                 style={{
                     scale,
-                    backgroundImage: "url(/img/fondo1.jpg)",
+                    backgroundImage: `url(${basePath}/img/fondo1.jpg)`,
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
